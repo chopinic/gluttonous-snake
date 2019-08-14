@@ -76,6 +76,7 @@
     <Compile Include="RobortSnack.cs" />
     <Compile Include="Score.cs" />
     <Compile Include="Scores.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Site.cs" />
     <Compile Include="Snack.cs" />
     <Compile Include="startPage.cs">

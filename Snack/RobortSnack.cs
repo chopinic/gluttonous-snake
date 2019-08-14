@@ -30,36 +30,7 @@ namespace WindowsFormsApp1
                 dirc = toface;
             }
             return base.Walk();
-            //#region 父类walk函数
-
-            //nowSite++;
-            //footPrint[((nowSite) % (Form1.maxW * Form1.maxW))] = new site(footPrint[(nowSite - 1) % (Form1.maxW * Form1.maxH)]);
-            //isAlive = footPrint[(nowSite % (Form1.maxW * Form1.maxW))].walk(dirc);
-            //if (footPrint[(nowSite % (Form1.maxW * Form1.maxW))].mapValue() == 2)
-            //{
-            //    isAlive = false;
-            //}
-            //if (Form1.map[footPrint[(nowSite % (Form1.maxW * Form1.maxW))].getx(),
-            //    footPrint[(nowSite % (Form1.maxW * Form1.maxW))].gety()] == 3)
-            //{
-            //    length++;
-            //    changeFood = true;
-            //}
-            //for (int i = 0; i < length; i++)
-            //{
-            //    Form1.map[footPrint[((nowSite - i) % (Form1.maxW * Form1.maxW))].getx(),
-            //        footPrint[((nowSite - i) % (Form1.maxW * Form1.maxW))].gety()] = 2;
-            //}
-            //Form1.map[footPrint[((nowSite - length) % (Form1.maxW * Form1.maxW))].getx(),
-            //    footPrint[((nowSite - length) % (Form1.maxW * Form1.maxW))].gety()] = 1;
-
-            //if (changeFood)
-            //{
-            //    Form1.newFood();
-            //    changeFood = false;
-            //}
-            //return isAlive;
-            //#endregion
+           
         }
 
         public int BFS()
@@ -73,9 +44,9 @@ namespace WindowsFormsApp1
                     vis[i, ii] = mainForm.maxW * mainForm.maxH;
             body = new Queue<int>();
             bool find = false;
-            Stack<site> close = new Stack<site>();
+            Stack<Position> close = new Stack<Position>();
             step = new Stack<face>();
-            Queue<site> q = new Queue<site>();
+            Queue<Position> q = new Queue<Position>();
             int cot = 0;
             map1 = new int[mainForm.maxH+1, mainForm.maxW+1];
             for (int i = length - 1; i >= 0; i--)
@@ -83,12 +54,12 @@ namespace WindowsFormsApp1
                 map1[footPrint[((nowSite - i) % (mainForm.maxW * mainForm.maxW))].getx(),
                     footPrint[((nowSite - i) % (mainForm.maxW * mainForm.maxW))].gety()] = length - i;
             }
-            site t = footPrint[nowSite % (mainForm.maxW * mainForm.maxW)];
+            Position t = footPrint[nowSite % (mainForm.maxW * mainForm.maxW)];
             if (nowSite > 0)
                 t.Prev(footPrint[(nowSite - 1) % (mainForm.maxW * mainForm.maxW)]);
-            q.Enqueue(new site(t)); cot++;
+            q.Enqueue(new Position(t)); cot++;
             vis[t.getx(), t.gety()] = t.getStep();
-            site tt = new site();
+            Position tt = new Position();
             int nowTotal = 1;
             Console.WriteLine("flag3");
 
@@ -100,7 +71,7 @@ namespace WindowsFormsApp1
                
                 foreach (face f in Enum.GetValues(typeof(face)))
                 {
-                    tt = (site)t.Clone();
+                    tt = (Position)t.Clone();
                     tt.Prev(t); tt.stepp();
                     tt.setNum(nowTotal); tt.setPreNum(t.getNum());
                     if (tt.walk(f))
@@ -112,7 +83,7 @@ namespace WindowsFormsApp1
                             continue;
                         vis[tt.getx(), tt.gety()] = tt.getStep();
                         
-                        q.Enqueue(new site(tt));
+                        q.Enqueue(new Position(tt));
 
                         nowTotal++;
                         cot++;
@@ -122,21 +93,21 @@ namespace WindowsFormsApp1
 
 
                                 #region 获取路径
-                                site t1 = new site(); t1 = (site)tt.Clone();
-                                track = new site[mainForm.maxW * mainForm.maxW];
+                                Position t1 = new Position(); t1 = (Position)tt.Clone();
+                                track = new Position[mainForm.maxW * mainForm.maxW];
                                 int[,] map2 = new int[mainForm.maxW, mainForm.maxW];
                                 int nows = 0; int viscot = 0;
-                                Queue<site> vert = new Queue<site>();
+                                Queue<Position> vert = new Queue<Position>();
                                 step = new Stack<face>();
                             step.Push(t1.compareTurn());
                             while (t1.getNum() != 0)
                             {
-                                track[nows] = new site(t1); nows++;
-                                foreach (site i in close)
+                                track[nows] = new Position(t1); nows++;
+                                foreach (Position i in close)
                                 {
                                     if (t1.compareDerive(i))
                                     {
-                                        t1 = (site)i.Clone();
+                                        t1 = (Position)i.Clone();
                                         step.Push(t1.compareTurn());
                                         break;
                                     }
@@ -163,10 +134,10 @@ namespace WindowsFormsApp1
                                 #region 验证答案BFS
 
 
-                                t1 = (site)tt.Clone();
+                                t1 = (Position)tt.Clone();
                                 t1.setStep(0);
-                                vert.Enqueue(new site(t1));
-                                site t2 = new site();
+                                vert.Enqueue(new Position(t1));
+                                Position t2 = new Position();
                                 while (vert.Count != 0)
                                 {
                                     t1 = vert.Dequeue();
@@ -174,14 +145,14 @@ namespace WindowsFormsApp1
                                     foreach (face k in Enum.GetValues(typeof(face)))
                                     {
 
-                                        t2 = (site)t1.Clone(); t2.stepp(); t2.Prev(t1);
+                                        t2 = (Position)t1.Clone(); t2.stepp(); t2.Prev(t1);
                                         if (t2.walk(k))
                                         {
                                             if (ContrastFace(t1.compareTurn(), k) == false)
                                                 continue;
                                             if (t2.mapValue(map2) == -1 || t2.mapValue(map2) > t2.getStep())
                                                 continue;
-                                            vert.Enqueue(new site(t2));
+                                            vert.Enqueue(new Position(t2));
                                             map2[t2.getx(), t2.gety()] = -1;
                                             viscot++;
                                         }
@@ -237,7 +208,7 @@ namespace WindowsFormsApp1
         public int minstep;
         public Stack<face> DFSstep;
         public bool find = false;
-        public void GoTo(site a)
+        public void GoTo(Position a)
         {
             if (a.mapValue() == 3)
             {
@@ -253,10 +224,10 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            site t = new site();
+            Position t = new Position();
             foreach (face f in Enum.GetValues(typeof(face)))
             {
-                t= (site)a.Clone();
+                t= (Position)a.Clone();
                 t.Prev(a); t.stepp();
                 if (t.walk(f))
                 {

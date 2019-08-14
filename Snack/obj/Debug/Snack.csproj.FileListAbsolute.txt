@@ -11,3 +11,16 @@
 \\Mac\Home\Documents\GitHub\Snack\WindowsFormsApp1\obj\Debug\Snack.csproj.CoreCompileInputs.cache
 \\Mac\Home\Documents\GitHub\Snack\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 \\Mac\Home\Documents\GitHub\Snack\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\bin\Debug\WindowsFormsApp1.exe.config
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\bin\Debug\WindowsFormsApp1.exe
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\bin\Debug\WindowsFormsApp1.pdb
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\Snack.csprojAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.ChooseSize.resources
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.mainForm.resources
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.Records.resources
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.startPage.resources
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\Snack.csproj.GenerateResource.cache
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\Snack.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.exe
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.pdb

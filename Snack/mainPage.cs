@@ -108,7 +108,7 @@ namespace WindowsFormsApp1
 
             map[a, b] = 3;
         }
-        public static site[] food = new site[15];
+        public static Position[] food = new Position[15];
         public static int now = 0;
         #region Debug
         public static void newFood(int a)
@@ -125,21 +125,21 @@ namespace WindowsFormsApp1
             now = 0;
             #region Debug
 
-            food[0] = new site(53);
-            food[1] = new site(31);
-            food[2] = new site(85);
-            food[3] = new site(73);
-            food[4] = new site(18);
-            food[5] = new site(81);
-            food[6] = new site(25);
-            food[7] = new site(74);
-            food[8] = new site(58);
-            food[9] = new site(41);
-            food[10] = new site(26);
-            food[11] = new site(85);
-            food[12] = new site(33);
-            food[13] = new site(55);
-            food[14] = new site(44);
+            food[0] = new Position(53);
+            food[1] = new Position(31);
+            food[2] = new Position(85);
+            food[3] = new Position(73);
+            food[4] = new Position(18);
+            food[5] = new Position(81);
+            food[6] = new Position(25);
+            food[7] = new Position(74);
+            food[8] = new Position(58);
+            food[9] = new Position(41);
+            food[10] = new Position(26);
+            food[11] = new Position(85);
+            food[12] = new Position(33);
+            food[13] = new Position(55);
+            food[14] = new Position(44);
             #endregion 
 
             for (int i = 0; i < maxH+1; i++)
