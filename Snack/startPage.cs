@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             panel1.Visible = false;
             form1 = form;
-            status = new Status(Playername.Text, 1000, 1, 15);
+            status = new Status(Playername.Text, 400, 1, 15);
         }
         public void setSize(int k)
         {
