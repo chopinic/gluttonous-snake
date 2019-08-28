@@ -59,6 +59,12 @@
       <DependentUpon>ChooseSize.cs</DependentUpon>
     </Compile>
     <Compile Include="face.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="mainPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="Status.cs" />
     <EmbeddedResource Include="ChooseSize.resx">
       <DependentUpon>ChooseSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainPage.resx">
       <DependentUpon>mainPage.cs</DependentUpon>

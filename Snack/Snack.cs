@@ -10,12 +10,12 @@ namespace WindowsFormsApp1
     {
         protected Stack<face> step;
         protected int reach = 0;
-        public Position[] footPrint = new Position[mainForm.maxW * mainForm.maxW]; //十位是行，个位是列
+        protected Position[] footPrint = new Position[GamePage.maxW * GamePage.maxW]; //十位是行，个位是列
         protected bool isAlive = true;
-        public static face dirc = face.up;
-        public int length = 1;
+        protected static face dirc = face.up;
+        protected int length = 1;
         protected Position[] track;
-        public int nowSite = 0;
+        protected int nowSite = 0;
         protected bool changeFood = false;
         public Snack() { Position t = new Position(55); footPrint[0] = t; dirc = face.up; }
         public bool ContrastFace(face a, face b)
@@ -27,33 +27,35 @@ namespace WindowsFormsApp1
             else
                 return true;
         }
-
+        public static face getdirc() { return dirc; }
+        public static void  setdirc(face a) { dirc = a; }
+        public int getlength() { return length; }
         virtual public bool Walk()
         {
             nowSite++;
-            footPrint[((nowSite) % (mainForm.maxW * mainForm.maxW))] = new Position(footPrint[((nowSite - 1) % (mainForm.maxW * mainForm.maxW))]);
-            isAlive = footPrint[(nowSite % (mainForm.maxW * mainForm.maxW))].walk(dirc);
-            if (footPrint[(nowSite % (mainForm.maxW * mainForm.maxW))].mapValue() == 2)
+            footPrint[((nowSite) % (GamePage.maxW * GamePage.maxW))] = new Position(footPrint[((nowSite - 1) % (GamePage.maxW * GamePage.maxW))]);
+            isAlive = footPrint[(nowSite % (GamePage.maxW * GamePage.maxW))].walk(dirc);
+            if (footPrint[(nowSite % (GamePage.maxW * GamePage.maxW))].mapValue() == 2)
             {
                 isAlive = false;
             }
             if (!isAlive)
                 return false;
-            if (mainForm.map[footPrint[(nowSite % (mainForm.maxW * mainForm.maxW))].getx(),
-                footPrint[(nowSite % (mainForm.maxW * mainForm.maxW))].gety()] == 3)
+            if (GamePage.map[footPrint[(nowSite % (GamePage.maxW * GamePage.maxW))].getx(),
+                footPrint[(nowSite % (GamePage.maxW * GamePage.maxW))].gety()] == 3)
             {
                 length++;
                 changeFood = true;
             }
             for (int i = 0; i < length; i++)
             {
-                mainForm.map[footPrint[((nowSite - i) % (mainForm.maxW * mainForm.maxW))].getx(), footPrint[((nowSite - i) % (mainForm.maxW * mainForm.maxW))].gety()] = 2;
+                GamePage.map[footPrint[((nowSite - i) % (GamePage.maxW * GamePage.maxW))].getx(), footPrint[((nowSite - i) % (GamePage.maxW * GamePage.maxW))].gety()] = 2;
             }
-            mainForm.map[footPrint[((nowSite - length) % (mainForm.maxW * mainForm.maxW))].getx(),
-                footPrint[((nowSite - length) % (mainForm.maxW * mainForm.maxW))].gety()] = 1;
+            GamePage.map[footPrint[((nowSite - length) % (GamePage.maxW * GamePage.maxW))].getx(),
+                footPrint[((nowSite - length) % (GamePage.maxW * GamePage.maxW))].gety()] = 1;
             if (changeFood)
             {
-                mainForm.newFood();
+                GamePage.newFood();
                 changeFood = false;
             }
             return isAlive;
@@ -62,13 +64,13 @@ namespace WindowsFormsApp1
         virtual public int getReach()
         {
             Position tt = new Position();
-            tt = (Position)footPrint[nowSite % (mainForm.maxW * mainForm.maxW)].Clone();
+            tt = (Position)footPrint[nowSite % (GamePage.maxW * GamePage.maxW)].Clone();
             #region 标记蛇体
-            int[,] map1 = new int[mainForm.maxW+1,mainForm.maxW+1];
+            int[,] map1 = new int[GamePage.maxW+1,GamePage.maxW+1];
             for (int i = length - 1; i >= 0; i--)
             {
-                map1[footPrint[((nowSite - i) % (mainForm.maxW * mainForm.maxW))].getx(),
-                    footPrint[((nowSite - i) % (mainForm.maxW * mainForm.maxW))].gety()] = length - i;
+                map1[footPrint[((nowSite - i) % (GamePage.maxW * GamePage.maxW))].getx(),
+                    footPrint[((nowSite - i) % (GamePage.maxW * GamePage.maxW))].gety()] = length - i;
             }
             #endregion
 
@@ -79,8 +81,8 @@ namespace WindowsFormsApp1
             t1 = (Position)tt.Clone(); ;
             t1.setStep(0);
             if(nowSite>0)
-                t1.Prev(footPrint[(nowSite - 1) % (mainForm.maxW * mainForm.maxW)]);
-            else { return mainForm.maxW * mainForm.maxW; }
+                t1.Prev(footPrint[(nowSite - 1) % (GamePage.maxW * GamePage.maxW)]);
+            else { return GamePage.maxW * GamePage.maxW; }
             vert.Enqueue(new Position(t1));
             Position t2 = new Position();
             Console.WriteLine("flag2");
