@@ -373,6 +373,7 @@ namespace WindowsFormsApp1
             timer.Stop();
             this.Close();
             main.showMain();
+            return;
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
