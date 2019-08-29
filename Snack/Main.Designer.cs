@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(3, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(872, 828);
@@ -42,11 +44,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(874, 829);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
+            this.MaximumSize = new System.Drawing.Size(900, 900);
+            this.MinimumSize = new System.Drawing.Size(900, 900);
             this.Name = "Main";
-            this.Text = "Main";
+            this.Text = "Gluttonous Snack";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Main_KeyPress);
             this.ResumeLayout(false);
 
         }

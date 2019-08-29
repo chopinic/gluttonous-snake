@@ -60,9 +60,9 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(688, 471);
+            this.button1.Location = new System.Drawing.Point(662, 471);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 67);
+            this.button1.Size = new System.Drawing.Size(181, 67);
             this.button1.TabIndex = 1;
             this.button1.Text = "Restart";
             this.button1.UseVisualStyleBackColor = false;
@@ -93,7 +93,7 @@
             this.ToolStripMenuItemRecords});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(874, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(874, 39);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,7 +109,7 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem4});
             this.难度ToolStripMenuItem.Name = "难度ToolStripMenuItem";
-            this.难度ToolStripMenuItem.Size = new System.Drawing.Size(82, 44);
+            this.难度ToolStripMenuItem.Size = new System.Drawing.Size(82, 35);
             this.难度ToolStripMenuItem.Text = "难度";
             // 
             // sToolStripMenuItem4
@@ -174,7 +174,7 @@
             this.ToolStripMenuItemAuto,
             this.手动ToolStripMenuItem});
             this.模式ToolStripMenuItem.Name = "模式ToolStripMenuItem";
-            this.模式ToolStripMenuItem.Size = new System.Drawing.Size(82, 44);
+            this.模式ToolStripMenuItem.Size = new System.Drawing.Size(82, 35);
             this.模式ToolStripMenuItem.Text = "模式";
             // 
             // ToolStripMenuItemAuto
@@ -194,7 +194,7 @@
             // ToolStripMenuItemRecords
             // 
             this.ToolStripMenuItemRecords.Name = "ToolStripMenuItemRecords";
-            this.ToolStripMenuItemRecords.Size = new System.Drawing.Size(82, 44);
+            this.ToolStripMenuItemRecords.Size = new System.Drawing.Size(82, 35);
             this.ToolStripMenuItemRecords.Text = "记录";
             this.ToolStripMenuItemRecords.Click += new System.EventHandler(this.ToolStripMenuItemRecords_Click);
             // 
@@ -213,9 +213,9 @@
             // 
             this.Pause.BackColor = System.Drawing.SystemColors.Window;
             this.Pause.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Pause.Location = new System.Drawing.Point(688, 554);
+            this.Pause.Location = new System.Drawing.Point(662, 554);
             this.Pause.Name = "Pause";
-            this.Pause.Size = new System.Drawing.Size(155, 67);
+            this.Pause.Size = new System.Drawing.Size(181, 67);
             this.Pause.TabIndex = 9;
             this.Pause.Text = "Pause";
             this.Pause.UseVisualStyleBackColor = false;
@@ -236,7 +236,7 @@
             this.playerName.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.playerName.Location = new System.Drawing.Point(328, 77);
             this.playerName.Name = "playerName";
-            this.playerName.Size = new System.Drawing.Size(178, 50);
+            this.playerName.Size = new System.Drawing.Size(296, 50);
             this.playerName.TabIndex = 12;
             this.playerName.Text = "player1";
             this.playerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -256,9 +256,9 @@
             // 
             this.back.BackColor = System.Drawing.SystemColors.Window;
             this.back.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.back.Location = new System.Drawing.Point(690, 642);
+            this.back.Location = new System.Drawing.Point(662, 642);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(155, 117);
+            this.back.Size = new System.Drawing.Size(183, 117);
             this.back.TabIndex = 15;
             this.back.Text = "Back To Menu";
             this.back.UseVisualStyleBackColor = false;
@@ -284,7 +284,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "GamePage";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "丑陋版贪吃蛇2.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.menuStrip1.ResumeLayout(false);

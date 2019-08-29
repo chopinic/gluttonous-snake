@@ -14,18 +14,19 @@ namespace WindowsFormsApp1
     {
         private GamePage main;
         private startPage startPage1;
+        private face input;
         //public Status status;
         public Main()
         {
             InitializeComponent();
             main = new GamePage(this);
+            main.TopLevel = false;
+            main.FormBorderStyle = FormBorderStyle.None;
+            panel1.Controls.Add(main);
             startPage1 = new startPage(this);
             startPage1.TopLevel = false;
-            main.TopLevel = false;
             startPage1.FormBorderStyle = FormBorderStyle.None;
-            main.FormBorderStyle = FormBorderStyle.None;
             panel1.Controls.Add(startPage1);
-            panel1.Controls.Add(main);
             panel1.Visible = true;
             startPage1.Show();
         }
@@ -35,17 +36,30 @@ namespace WindowsFormsApp1
         }
         public void showMain()
         {
+            startPage1 = new startPage(this);
+            startPage1.TopLevel = false;
+            startPage1.FormBorderStyle = FormBorderStyle.None;
+            panel1.Controls.Add(startPage1);
             panel1.Visible = true;
             startPage1.Show();
         }
         public void Start(Status status)
         {
+            main = new GamePage(this);
+            main.TopLevel = false;
+            main.FormBorderStyle = FormBorderStyle.None;
+            panel1.Controls.Add(main);
             main.Show();
             main.Start(status);
         }
         private void Main_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Main_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            main.Form1_KeyPress(sender, e);
         }
     }
 }
