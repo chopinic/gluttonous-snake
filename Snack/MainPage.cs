@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Main : Form
+    public partial class MainPage : Form
     {
         private GamePage main;
         private startPage startPage1;
-        private face input;
-        //public Status status;
-        public Main()
+        public MainPage()
         {
             InitializeComponent();
             main = new GamePage(this);

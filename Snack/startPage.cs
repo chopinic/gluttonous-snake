@@ -14,8 +14,8 @@ namespace WindowsFormsApp1
     {
 
         Status status;
-        private Main form1 = null;
-        public startPage(Main form)
+        private MainPage form1 = null;
+        public startPage(MainPage form)
         {
             InitializeComponent();
             panel1.Visible = false;

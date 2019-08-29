@@ -23,5 +23,5 @@
 \\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\Snack.csproj.CoreCompileInputs.cache
 \\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.exe
 \\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.pdb
-\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.Main.resources
 \\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.GamePage.resources
+\\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.MainPage.resources

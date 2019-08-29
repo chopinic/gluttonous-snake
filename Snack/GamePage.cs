@@ -19,20 +19,15 @@ namespace WindowsFormsApp1
     public partial class GamePage : Form
     {
         Scores scores = new Scores();
-        Main main;
+        MainPage main;
         public static int maxH = 20;
         public static int maxW = 20;
         face input = face.down;
         int cot = 3;                //倒计时
-        public GamePage(Main main)
+        public GamePage(MainPage main)
         {
             InitializeComponent();
             this.main = main;
-            //startPage startPage1 = new startPage(this);
-            //startPage1.TopLevel = false;
-            //startPage1.FormBorderStyle = FormBorderStyle.None;
-            //panel1.Controls.Add(startPage1);
-            //startPage1.Show();
         }
         private static string result = "";
         int interval=1000;
