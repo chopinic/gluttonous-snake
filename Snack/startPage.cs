@@ -14,8 +14,8 @@ namespace WindowsFormsApp1
     {
 
         Status status;
-        private mainForm form1 = null;
-        public startPage(mainForm form)
+        private MainPage form1 = null;
+        public startPage(MainPage form)
         {
             InitializeComponent();
             panel1.Visible = false;
@@ -61,7 +61,7 @@ namespace WindowsFormsApp1
 
         private void Record_Click(object sender, EventArgs e)
         {
-            form1.ToolStripMenuItemRecords_Click(new object(),new EventArgs());
+            form1.showRecord();
         }
     }
 }

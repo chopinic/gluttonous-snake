@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
     {
         public Queue<int> body;
         int stepcot = 0;
-        int[,] map1 = new int[mainForm.maxW+1, mainForm.maxW+1];
+        int[,] map1 = new int[GamePage.maxW+1, GamePage.maxW+1];
         
 
         public override bool Walk()
@@ -38,25 +38,25 @@ namespace WindowsFormsApp1
             Console.WriteLine("flag1");
 
             reach = 0;
-            int[,] vis = new int[mainForm.maxW+1, mainForm.maxW+1];
-            for (int i = 0; i < mainForm.maxW; i++)
-                for (int ii = 0; ii < mainForm.maxW; ii++)
-                    vis[i, ii] = mainForm.maxW * mainForm.maxH;
+            int[,] vis = new int[GamePage.maxW+1, GamePage.maxW+1];
+            for (int i = 0; i < GamePage.maxW; i++)
+                for (int ii = 0; ii < GamePage.maxW; ii++)
+                    vis[i, ii] = GamePage.maxW * GamePage.maxH;
             body = new Queue<int>();
             bool find = false;
             Stack<Position> close = new Stack<Position>();
             step = new Stack<face>();
             Queue<Position> q = new Queue<Position>();
             int cot = 0;
-            map1 = new int[mainForm.maxH+1, mainForm.maxW+1];
+            map1 = new int[GamePage.maxH+1, GamePage.maxW+1];
             for (int i = length - 1; i >= 0; i--)
             {
-                map1[footPrint[((nowSite - i) % (mainForm.maxW * mainForm.maxW))].getx(),
-                    footPrint[((nowSite - i) % (mainForm.maxW * mainForm.maxW))].gety()] = length - i;
+                map1[footPrint[((nowSite - i) % (GamePage.maxW * GamePage.maxW))].getx(),
+                    footPrint[((nowSite - i) % (GamePage.maxW * GamePage.maxW))].gety()] = length - i;
             }
-            Position t = footPrint[nowSite % (mainForm.maxW * mainForm.maxW)];
+            Position t = footPrint[nowSite % (GamePage.maxW * GamePage.maxW)];
             if (nowSite > 0)
-                t.Prev(footPrint[(nowSite - 1) % (mainForm.maxW * mainForm.maxW)]);
+                t.Prev(footPrint[(nowSite - 1) % (GamePage.maxW * GamePage.maxW)]);
             q.Enqueue(new Position(t)); cot++;
             vis[t.getx(), t.gety()] = t.getStep();
             Position tt = new Position();
@@ -94,8 +94,8 @@ namespace WindowsFormsApp1
 
                                 #region 获取路径
                                 Position t1 = new Position(); t1 = (Position)tt.Clone();
-                                track = new Position[mainForm.maxW * mainForm.maxW];
-                                int[,] map2 = new int[mainForm.maxW, mainForm.maxW];
+                                track = new Position[GamePage.maxW * GamePage.maxW];
+                                int[,] map2 = new int[GamePage.maxW, GamePage.maxW];
                                 int nows = 0; int viscot = 0;
                                 Queue<Position> vert = new Queue<Position>();
                                 step = new Stack<face>();
@@ -117,13 +117,13 @@ namespace WindowsFormsApp1
                             #endregion
                             Console.WriteLine("flag3:next");
 
-                            if (mainForm.maxH < 14)
+                            if (GamePage.maxH < 14)
                             {
                                 #region map2标记蛇体
                                 for (int i = 0; i < length + 1 - nows; i++)
                                 {
-                                    map2[footPrint[(nowSite - i) % (mainForm.maxW * mainForm.maxW)].getx(),
-                                        footPrint[(nowSite - i) % (mainForm.maxW * mainForm.maxW)].gety()] = nows + i + 1;
+                                    map2[footPrint[(nowSite - i) % (GamePage.maxW * GamePage.maxW)].getx(),
+                                        footPrint[(nowSite - i) % (GamePage.maxW * GamePage.maxW)].gety()] = nows + i + 1;
                                 }
                                 for (int i = 0; i < nows && i < length + 1; i++)
                                 {
@@ -160,7 +160,7 @@ namespace WindowsFormsApp1
                                 }
                                 #endregion
                                 reach = viscot;
-                                if (reach >= (mainForm.maxW * mainForm.maxW))
+                                if (reach >= (GamePage.maxW * GamePage.maxW))
                                 {
                                     find = true;
                                     break;
@@ -203,7 +203,7 @@ namespace WindowsFormsApp1
         }
         #region DFS
 
-        public int[,] DFSvis = new int[mainForm.maxW+1, mainForm.maxW+1];
+        public int[,] DFSvis = new int[GamePage.maxW+1, GamePage.maxW+1];
         public int nowstep;
         public int minstep;
         public Stack<face> DFSstep;
@@ -250,8 +250,8 @@ namespace WindowsFormsApp1
         {
             step = new Stack<face>();
             DFSstep = new Stack<face>();
-            for (int i = 0; i < mainForm.maxH; i++)
-                for (int ii = 0; ii < mainForm.maxW; ii++)
+            for (int i = 0; i < GamePage.maxH; i++)
+                for (int ii = 0; ii < GamePage.maxW; ii++)
                     DFSvis[i, ii] = 0;
             nowstep = length;
             minstep = length * 2;
@@ -261,11 +261,11 @@ namespace WindowsFormsApp1
             find = false;
             for (int i = length - 1; i >= 0; i--)
             {
-                DFSvis[footPrint[((nowSite - i) % (mainForm.maxW * mainForm.maxW))].getx(),
-                    footPrint[((nowSite - i) % (mainForm.maxW * mainForm.maxW))].gety()] = length - i;
+                DFSvis[footPrint[((nowSite - i) % (GamePage.maxW * GamePage.maxW))].getx(),
+                    footPrint[((nowSite - i) % (GamePage.maxW * GamePage.maxW))].gety()] = length - i;
 
             }
-            GoTo(footPrint[nowSite % (mainForm.maxW * mainForm.maxW)]);
+            GoTo(footPrint[nowSite % (GamePage.maxW * GamePage.maxW)]);
             if (find == false)
                 return;
         }

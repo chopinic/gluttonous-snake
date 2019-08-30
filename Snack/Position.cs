@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
                 y -= 1;
             if (t == face.right)
                 y += 1;
-            if (x < mainForm.maxW && x > 0 && y < mainForm.maxH && y > 0)
+            if (x < GamePage.maxW && x > 0 && y < GamePage.maxH && y > 0)
                 return true;
             else
                 return false;
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
         { prevx = t.x; prevy = t.y; }
         public int mapValue()
         {
-            return mainForm.map[x, y];
+            return GamePage.map[x, y];
         }
         public int mapValue(int[,] map)
         {

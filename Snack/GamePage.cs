@@ -16,21 +16,18 @@ using System.Runtime.Serialization.Formatters.Binary;
 namespace WindowsFormsApp1
 {
     
-    public partial class mainForm : Form
+    public partial class GamePage : Form
     {
         Scores scores = new Scores();
+        MainPage main;
         public static int maxH = 20;
         public static int maxW = 20;
         face input = face.down;
         int cot = 3;                //倒计时
-        public mainForm()
+        public GamePage(MainPage main)
         {
             InitializeComponent();
-            startPage startPage1 = new startPage(this);
-            startPage1.TopLevel = false;
-            startPage1.FormBorderStyle = FormBorderStyle.None;
-            panel1.Controls.Add(startPage1);
-            startPage1.Show();
+            this.main = main;
         }
         private static string result = "";
         int interval=1000;
@@ -183,7 +180,6 @@ namespace WindowsFormsApp1
         
         public void Start(Status a)
         {
-            panel1.Visible = false;
             interval = a.interval;
             maxH = a.size;
             maxW = a.size;
@@ -209,7 +205,7 @@ namespace WindowsFormsApp1
                 mapString.Text = "\r\n  " + cot.ToString();
                 return;
             }
-            Snack.dirc = input;
+            Snack.setdirc(input);
             next = snack.Walk();
             snackLength.Text = "Length: " + snack.getLenth();
             if(next==false)
@@ -217,7 +213,7 @@ namespace WindowsFormsApp1
                 timer.Stop();
 
                 Score t = new Score();
-                t.setLength(snack.length);t.setPlayerName(playerName.Text);
+                t.setLength(snack.getlength());t.setPlayerName(playerName.Text);
                 if (scores.add(t))
                     mapString.Text += "\r\nYou Break The Record!";
                 else
@@ -302,26 +298,26 @@ namespace WindowsFormsApp1
 
       
 
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        public void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 's')
             {
-                if (Snack.dirc != face.down)
+                if (Snack.getdirc() != face.down)
                     input = face.up;
             }
             else if (e.KeyChar == 'd')
             {
-                if (Snack.dirc != face.left)
+                if (Snack.getdirc() != face.left)
                     input = face.right;
             }
             else if (e.KeyChar == 'a')
             {
-                if (Snack.dirc != face.right)
+                if (Snack.getdirc() != face.right)
                     input = face.left;
             }
             else if (e.KeyChar == 'w')
             {
-                if (Snack.dirc != face.up)
+                if (Snack.getdirc() != face.up)
                     input = face.down;
             }
             
@@ -370,12 +366,9 @@ namespace WindowsFormsApp1
         private void Back_Click(object sender, EventArgs e)
         {
             timer.Stop();
-            startPage startPage1 = new startPage(this);
-            startPage1.TopLevel = false;
-            startPage1.FormBorderStyle = FormBorderStyle.None;
-            panel1.Controls.Add(startPage1);
-            panel1.Visible = true;
-            startPage1.Show();
+            this.Close();
+            main.showMain();
+            return;
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)

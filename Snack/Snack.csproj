@@ -59,11 +59,17 @@
       <DependentUpon>ChooseSize.cs</DependentUpon>
     </Compile>
     <Compile Include="face.cs" />
-    <Compile Include="mainPage.cs">
+    <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainPage.Designer.cs">
-      <DependentUpon>mainPage.cs</DependentUpon>
+    <Compile Include="MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GamePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GamePage.Designer.cs">
+      <DependentUpon>GamePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,8 +95,11 @@
     <EmbeddedResource Include="ChooseSize.resx">
       <DependentUpon>ChooseSize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainPage.resx">
-      <DependentUpon>mainPage.cs</DependentUpon>
+    <EmbeddedResource Include="MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GamePage.resx">
+      <DependentUpon>GamePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class mainForm
+    partial class GamePage
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GamePage));
             this.button1 = new System.Windows.Forms.Button();
             this.mapString = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
@@ -53,7 +53,6 @@
             this.playerName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.back = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,9 +60,9 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(688, 471);
+            this.button1.Location = new System.Drawing.Point(662, 471);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 67);
+            this.button1.Size = new System.Drawing.Size(181, 67);
             this.button1.TabIndex = 1;
             this.button1.Text = "Restart";
             this.button1.UseVisualStyleBackColor = false;
@@ -214,9 +213,9 @@
             // 
             this.Pause.BackColor = System.Drawing.SystemColors.Window;
             this.Pause.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Pause.Location = new System.Drawing.Point(688, 554);
+            this.Pause.Location = new System.Drawing.Point(662, 554);
             this.Pause.Name = "Pause";
-            this.Pause.Size = new System.Drawing.Size(155, 67);
+            this.Pause.Size = new System.Drawing.Size(181, 67);
             this.Pause.TabIndex = 9;
             this.Pause.Text = "Pause";
             this.Pause.UseVisualStyleBackColor = false;
@@ -237,7 +236,7 @@
             this.playerName.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.playerName.Location = new System.Drawing.Point(328, 77);
             this.playerName.Name = "playerName";
-            this.playerName.Size = new System.Drawing.Size(178, 50);
+            this.playerName.Size = new System.Drawing.Size(296, 50);
             this.playerName.TabIndex = 12;
             this.playerName.Text = "player1";
             this.playerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -257,29 +256,20 @@
             // 
             this.back.BackColor = System.Drawing.SystemColors.Window;
             this.back.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.back.Location = new System.Drawing.Point(690, 642);
+            this.back.Location = new System.Drawing.Point(662, 642);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(155, 117);
+            this.back.Size = new System.Drawing.Size(183, 117);
             this.back.TabIndex = 15;
             this.back.Text = "Back To Menu";
             this.back.UseVisualStyleBackColor = false;
             this.back.Click += new System.EventHandler(this.Back_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(874, 817);
-            this.panel1.TabIndex = 16;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
-            // 
-            // mainForm
+            // GamePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(874, 829);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.back);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.playerName);
@@ -292,9 +282,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "mainForm";
+            this.Name = "GamePage";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "丑陋版贪吃蛇2.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.menuStrip1.ResumeLayout(false);
@@ -328,6 +317,5 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.Button back;
-        private System.Windows.Forms.Panel panel1;
     }
 }
