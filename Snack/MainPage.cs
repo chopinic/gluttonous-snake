@@ -50,14 +50,15 @@ namespace WindowsFormsApp1
             main.Show();
             main.Start(status);
         }
-        private void Main_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void Main_KeyPress(object sender, KeyPressEventArgs e)
         {
             main.Form1_KeyPress(sender, e);
         }
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
