@@ -49,7 +49,6 @@
             this.ToolStripMenuItemRecords = new System.Windows.Forms.ToolStripMenuItem();
             this.snackLength = new System.Windows.Forms.Label();
             this.Pause = new System.Windows.Forms.Button();
-            this.reach = new System.Windows.Forms.Label();
             this.playerName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.back = new System.Windows.Forms.Button();
@@ -93,7 +92,7 @@
             this.ToolStripMenuItemRecords});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(874, 39);
+            this.menuStrip1.Size = new System.Drawing.Size(874, 48);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,7 +108,7 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem4});
             this.难度ToolStripMenuItem.Name = "难度ToolStripMenuItem";
-            this.难度ToolStripMenuItem.Size = new System.Drawing.Size(82, 35);
+            this.难度ToolStripMenuItem.Size = new System.Drawing.Size(82, 44);
             this.难度ToolStripMenuItem.Text = "难度";
             // 
             // sToolStripMenuItem4
@@ -174,7 +173,7 @@
             this.ToolStripMenuItemAuto,
             this.手动ToolStripMenuItem});
             this.模式ToolStripMenuItem.Name = "模式ToolStripMenuItem";
-            this.模式ToolStripMenuItem.Size = new System.Drawing.Size(82, 35);
+            this.模式ToolStripMenuItem.Size = new System.Drawing.Size(82, 44);
             this.模式ToolStripMenuItem.Text = "模式";
             // 
             // ToolStripMenuItemAuto
@@ -194,7 +193,7 @@
             // ToolStripMenuItemRecords
             // 
             this.ToolStripMenuItemRecords.Name = "ToolStripMenuItemRecords";
-            this.ToolStripMenuItemRecords.Size = new System.Drawing.Size(82, 35);
+            this.ToolStripMenuItemRecords.Size = new System.Drawing.Size(82, 44);
             this.ToolStripMenuItemRecords.Text = "记录";
             this.ToolStripMenuItemRecords.Click += new System.EventHandler(this.ToolStripMenuItemRecords_Click);
             // 
@@ -220,15 +219,6 @@
             this.Pause.Text = "Pause";
             this.Pause.UseVisualStyleBackColor = false;
             this.Pause.Click += new System.EventHandler(this.Pause_Click);
-            // 
-            // reach
-            // 
-            this.reach.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.reach.Location = new System.Drawing.Point(638, 344);
-            this.reach.Name = "reach";
-            this.reach.Size = new System.Drawing.Size(224, 99);
-            this.reach.TabIndex = 11;
-            this.reach.Text = "   Blocks";
             // 
             // playerName
             // 
@@ -271,7 +261,6 @@
             this.Controls.Add(this.back);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.playerName);
-            this.Controls.Add(this.reach);
             this.Controls.Add(this.Pause);
             this.Controls.Add(this.snackLength);
             this.Controls.Add(this.mapString);
@@ -306,7 +295,6 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemRecords;
         private System.Windows.Forms.Button Pause;
         private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem4;
-        private System.Windows.Forms.Label reach;
         private System.Windows.Forms.TextBox playerName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;

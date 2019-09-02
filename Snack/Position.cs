@@ -8,18 +8,15 @@ namespace WindowsFormsApp1
 {
 
 
-    public partial class Position : Site
+    public partial class Position 
     {
-        //private int prevx;
-        //private int prevy;
+        public int x, y;
         private int num;
-        private int pren;
         private int step = 0;
         public Position() { }
         public Position(Position t)
         {
             this.x = t.x; this.y = t.y;
-            pren = t.pren; num = t.num;
             step = t.step;
         }
         public Position(int t) { this.x = t / 10; y = (t % 10); }
@@ -27,8 +24,6 @@ namespace WindowsFormsApp1
         public void setStep(int t) { step = t; }
         public void setNum() { num++; }
         public void setNum(int n) { num = n; }
-        public void setPreNum(int n) { pren = n; }
-        public int getPreNum() { return pren; }
         public int getNum() { return num; }
         public int getStep() { return step; }
         public bool compare(Position t) { return (x == t.x) && (y == t.y); }
@@ -43,7 +38,7 @@ namespace WindowsFormsApp1
                 tt.y -= 1;
             if (t == face.right)
                 tt.y += 1;
-            if (x < GamePage.maxW && x > 0 && y < GamePage.maxH && y > 0)
+            if (tt.x < GamePage.maxW && tt.x > 0 && tt.y < GamePage.maxH && tt.y > 0)
             {
                 this.x = tt.x;this.y = tt.y;
                 return true;

@@ -79,7 +79,6 @@ namespace WindowsFormsApp1 {
                 a = ran.Next (1, maxH - 1);
                 b = ran.Next (1, maxW - 1);
             }
-
             map[a, b] = 3;
         }
         public static Position[] food = new Position[15];
@@ -97,7 +96,7 @@ namespace WindowsFormsApp1 {
                     map[i, ii] = 1; //1 表示区域空
             }
             map[5, 5] = 2; //2 表示贪食蛇身体
-            map[6, 8] = 3; //3表示食物
+            map[2, 5] = 3; //3表示食物
         }
 
         Snack snack;
