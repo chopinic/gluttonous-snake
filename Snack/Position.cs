@@ -10,8 +10,8 @@ namespace WindowsFormsApp1
 
     public partial class Position : Site
     {
-        private int prevx;
-        private int prevy;
+        //private int prevx;
+        //private int prevy;
         private int num;
         private int pren;
         private int step = 0;
@@ -20,9 +20,7 @@ namespace WindowsFormsApp1
         {
             this.x = t.x; this.y = t.y;
             pren = t.pren; num = t.num;
-            prevx = t.prevx; prevy = t.prevy;
             step = t.step;
-
         }
         public Position(int t) { this.x = t / 10; y = (t % 10); }
         public void stepp() { step++; }
@@ -34,44 +32,26 @@ namespace WindowsFormsApp1
         public int getNum() { return num; }
         public int getStep() { return step; }
         public bool compare(Position t) { return (x == t.x) && (y == t.y); }
-        public bool compareDerive(Position t) { return pren == t.num; }
-        public Position reverse() { x = prevx; y = prevy; return this; }
-        public face compareTurn()
+        public bool next(face t)
         {
-            if (prevx == x && prevy == y)
-                return face.up;
-            if (x == prevx)
-            {
-                if (y > prevy)
-                    return face.right;
-                else
-                    return face.left;
-            }
-            else
-            {
-                if (x > prevx)
-                    return face.up;
-                else
-                    return face.down;
-            }
-        }
-        public bool walk(face t)
-        {
+            Position tt = new Position(this);
             if (t == face.down)
-                x -= 1;
+                tt.x -= 1;
             if (t == face.up)
-                x += 1;
+                tt.x += 1;
             if (t == face.left)
-                y -= 1;
+                tt.y -= 1;
             if (t == face.right)
-                y += 1;
+                tt.y += 1;
             if (x < GamePage.maxW && x > 0 && y < GamePage.maxH && y > 0)
+            {
+                this.x = tt.x;this.y = tt.y;
                 return true;
+            }
             else
                 return false;
         }
-        public void Prev(Position t)
-        { prevx = t.x; prevy = t.y; }
+        
         public int mapValue()
         {
             return GamePage.map[x, y];
@@ -86,10 +66,6 @@ namespace WindowsFormsApp1
 
         
 
-        public object Clone()
-        {
-            Position t = new Position(this);
-            return t;
-        }
+       
     }
 }

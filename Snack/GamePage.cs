@@ -143,12 +143,12 @@ namespace WindowsFormsApp1 {
             }
             Snack.setdirc (input);
             next = snack.Walk ();
-            snackLength.Text = "Length: " + snack.getLenth ();
+            snackLength.Text = "Length: " + snack.getLength ();
             if (next == false) {
                 timer.Stop ();
                 Pause.Enabled = false;
                 Score t = new Score ();
-                t.setLength (snack.getlength ());
+                t.setLength (snack.getLength ());
                 t.setPlayerName (playerName.Text);
                 if (scores.add (t))
                     mapString.Text += "\r\nYou Break The Record!";
@@ -157,11 +157,7 @@ namespace WindowsFormsApp1 {
                 SerializeObj ("PlayerRecords", scores);
             } else
                 showString ();
-            int tt = snack.getReach ();
-            if (tt != -1)
-                reach.Text = tt + " blocks\r\nwithin reach"; // + snack.getReach();
-            else
-                reach.Text = "";
+            
         }
 
         #region 改变时间间隔

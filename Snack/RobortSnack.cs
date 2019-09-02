@@ -8,6 +8,7 @@ namespace WindowsFormsApp1
 {
     public class RobortSnack : Snack
     {
+        protected Stack<face> step;
         public Queue<int> body;
         int stepcot = 0;
         int[,] map1 = new int[GamePage.maxW+1, GamePage.maxW+1];
@@ -74,7 +75,7 @@ namespace WindowsFormsApp1
                     tt = (Position)t.Clone();
                     tt.Prev(t); tt.stepp();
                     tt.setNum(nowTotal); tt.setPreNum(t.getNum());
-                    if (tt.walk(f))
+                    if (tt.next(f))
                     {
                         if (ContrastFace(f, t.compareTurn()) == false)
                             continue;
@@ -146,7 +147,7 @@ namespace WindowsFormsApp1
                                     {
 
                                         t2 = (Position)t1.Clone(); t2.stepp(); t2.Prev(t1);
-                                        if (t2.walk(k))
+                                        if (t2.next(k))
                                         {
                                             if (ContrastFace(t1.compareTurn(), k) == false)
                                                 continue;
@@ -229,7 +230,7 @@ namespace WindowsFormsApp1
             {
                 t= (Position)a.Clone();
                 t.Prev(a); t.stepp();
-                if (t.walk(f))
+                if (t.next(f))
                 {
                     if ((DFSvis[t.getx(), t.gety()] <= length && DFSvis[t.getx(), t.gety()] >= t.getStep())
                         || DFSvis[t.getx(), t.gety()] > length || nowstep + 1 > minstep)
