@@ -229,7 +229,6 @@
             this.reach.Size = new System.Drawing.Size(224, 99);
             this.reach.TabIndex = 11;
             this.reach.Text = "   Blocks";
-            this.reach.Click += new System.EventHandler(this.Reach_Click);
             // 
             // playerName
             // 
@@ -250,7 +249,6 @@
             this.label5.Size = new System.Drawing.Size(95, 33);
             this.label5.TabIndex = 13;
             this.label5.Text = "Name:";
-            this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // back
             // 
@@ -284,8 +282,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "GamePage";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -40,7 +40,7 @@
             this.panel1.Size = new System.Drawing.Size(890, 890);
             this.panel1.TabIndex = 0;
             // 
-            // Main
+            // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -51,9 +51,8 @@
             this.KeyPreview = true;
             this.MaximumSize = new System.Drawing.Size(900, 900);
             this.MinimumSize = new System.Drawing.Size(900, 900);
-            this.Name = "Main";
+            this.Name = "MainPage";
             this.Text = "Gluttonous Snack";
-            this.Load += new System.EventHandler(this.Main_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Main_KeyPress);
             this.ResumeLayout(false);
 

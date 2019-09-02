@@ -53,12 +53,7 @@ namespace WindowsFormsApp1
 
         private void Main_KeyPress(object sender, KeyPressEventArgs e)
         {
-            main.Form1_KeyPress(sender, e);
+            main.inputKey( e);
         }
-        private void Main_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

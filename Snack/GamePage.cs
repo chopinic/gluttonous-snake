@@ -219,27 +219,32 @@ namespace WindowsFormsApp1 {
 
         }
 
-        public void Form1_KeyPress (object sender, KeyPressEventArgs e) {
-            if (e.KeyChar == 's') {
-                if (Snack.getdirc () != face.down)
+     
+        public void inputKey( KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 's')
+            {
+                if (Snack.getdirc() != face.down)
                     input = face.up;
-            } else if (e.KeyChar == 'd') {
-                if (Snack.getdirc () != face.left)
+            }
+            else if (e.KeyChar == 'd')
+            {
+                if (Snack.getdirc() != face.left)
                     input = face.right;
-            } else if (e.KeyChar == 'a') {
-                if (Snack.getdirc () != face.right)
+            }
+            else if (e.KeyChar == 'a')
+            {
+                if (Snack.getdirc() != face.right)
                     input = face.left;
-            } else if (e.KeyChar == 'w') {
-                if (Snack.getdirc () != face.up)
+            }
+            else if (e.KeyChar == 'w')
+            {
+                if (Snack.getdirc() != face.up)
                     input = face.down;
             }
 
         }
-
-        private void Form1_Load (object sender, EventArgs e) {
-
-        }
-
+     
         private void ToolStripMenuItem2_Click (object sender, EventArgs e) {
             maxH = 11;
             maxW = 11;
@@ -267,9 +272,7 @@ namespace WindowsFormsApp1 {
 
         }
 
-        private void Label5_Click (object sender, EventArgs e) {
-
-        }
+    
 
         private void Back_Click (object sender, EventArgs e) {
             timer.Stop ();
@@ -278,14 +281,9 @@ namespace WindowsFormsApp1 {
             return;
         }
 
-        private void Panel1_Paint (object sender, PaintEventArgs e) {
+        
 
-        }
-
-        private void Reach_Click (object sender, EventArgs e) {
-
-        }
-
+     
         private void SnackLength_Click (object sender, EventArgs e) {
 
         }
