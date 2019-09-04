@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WindowsFormsApp1
 {
     [Serializable]
-    class Score:ICloneable
+    class Score
     {
         private int length = 0;
         private string playerName = "";
