@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-
-
     public partial class Position 
     {
         public int x, y;
-        private int num;
-        private int step = 0;
+        public int prevnum;
+        public int step = 0;
+        public face turn;
         public Position() { }
         public Position(Position t)
         {
@@ -20,12 +19,6 @@ namespace WindowsFormsApp1
             step = t.step;
         }
         public Position(int t) { this.x = t / 10; y = (t % 10); }
-        public void stepp() { step++; }
-        public void setStep(int t) { step = t; }
-        public void setNum() { num++; }
-        public void setNum(int n) { num = n; }
-        public int getNum() { return num; }
-        public int getStep() { return step; }
         public bool compare(Position t) { return (x == t.x) && (y == t.y); }
         public bool next(face t)
         {
@@ -55,10 +48,7 @@ namespace WindowsFormsApp1
         {
             return map[x, y];
         }
-        public int getx() { return x; }
-        public int gety() { return y; }
-        
-
+    
         
 
        
