@@ -6,13 +6,13 @@ namespace WindowsFormsApp1
     public class Snack
     {
         protected bool isAlive = true;
-        protected static face dirc = face.up;
+        protected  face dirc = face.up;
         protected static ArrayList body = new ArrayList();
         protected int length = 1;
         protected int nowSite = 0;
         public Snack() { body.Clear(); Position now = new Position(55);body.Add(now);  dirc = face.up; }
-        public static face getdirc() { return dirc; }
-        public static void  setdirc(face a) { dirc = a; }
+        public face getdirc() { return dirc; }
+        virtual public void  setdirc(face a) { dirc = a; }
         public int getLength() { return length; }
         virtual public bool Walk()
         {

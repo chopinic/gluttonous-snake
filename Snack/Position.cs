@@ -17,6 +17,8 @@ namespace WindowsFormsApp1
         {
             this.x = t.x; this.y = t.y;
             step = t.step;
+            prevnum = t.prevnum;
+            turn = t.turn;
         }
         public Position(int t) { this.x = t / 10; y = (t % 10); }
         public bool compare(Position t) { return (x == t.x) && (y == t.y); }
@@ -39,7 +41,10 @@ namespace WindowsFormsApp1
             else
                 return false;
         }
-        
+        public int distance(Position t)
+        {
+            return System.Math.Abs(t.x - x) + System.Math.Abs(t.y - y);
+        }
         public int mapValue()
         {
             return GamePage.map[x, y];

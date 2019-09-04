@@ -69,17 +69,25 @@ namespace WindowsFormsApp1 {
                 }
             }
         }
+        static int[] aa = { 5, 6, 7, 8 };
+        static int[] bb = {1,2,3,4, 5, 6, 7, 8 };
+        static int kkk = 0;
         public static void newFood () {
-            decimal seed = decimal.Parse (DateTime.Now.Second.ToString ());
-            int s = (int) seed;
-            Random ran = new Random (s);
-            int a = ran.Next (1, maxH - 1);
-            int b = ran.Next (1, maxW - 1);
-            while (map[a, b] != 1) {
-                a = ran.Next (1, maxH - 1);
-                b = ran.Next (1, maxW - 1);
+
+            decimal seed = decimal.Parse(DateTime.Now.Second.ToString());
+            int s = (int)seed;
+            Random ran = new Random(s);
+            int a = ran.Next(1, maxH - 1);
+            int b = ran.Next(1, maxW - 1);
+            while (map[a, b] != 1)
+            {
+                a = ran.Next(1, maxH - 1);
+                b = ran.Next(1, maxW - 1);
             }
+
             map[a, b] = 3;
+            //map[aa[kkk], bb[kkk]] = 3;
+            //kkk++;
         }
         public static Position[] food = new Position[15];
         public static int now = 0;
@@ -109,7 +117,7 @@ namespace WindowsFormsApp1 {
             } else {
                 snack = new RobortSnack ();
                 playerName.Text = "RobortSnack";
-                timer.Interval = 50;
+                timer.Interval = 25;
             }
             timer.Interval = interval;
             mapString.Font = new Font (mapString.Font.FontFamily.Name, 60);
@@ -140,7 +148,7 @@ namespace WindowsFormsApp1 {
                 mapString.Text = "\r\n  " + cot.ToString ();
                 return;
             }
-            Snack.setdirc (input);
+            snack.setdirc (input);
             next = snack.Walk ();
             snackLength.Text = "Length: " + snack.getLength ();
             if (next == false) {
@@ -157,7 +165,7 @@ namespace WindowsFormsApp1 {
             } else
                 showString ();
             
-        }
+       }
 
         #region 改变时间间隔
 
@@ -219,22 +227,22 @@ namespace WindowsFormsApp1 {
         {
             if (e.KeyChar == 's')
             {
-                if (Snack.getdirc() != face.down)
+                if (snack.getdirc() != face.down)
                     input = face.up;
             }
             else if (e.KeyChar == 'd')
             {
-                if (Snack.getdirc() != face.left)
+                if (snack.getdirc() != face.left)
                     input = face.right;
             }
             else if (e.KeyChar == 'a')
             {
-                if (Snack.getdirc() != face.right)
+                if (snack.getdirc() != face.right)
                     input = face.left;
             }
             else if (e.KeyChar == 'w')
             {
-                if (Snack.getdirc() != face.up)
+                if (snack.getdirc() != face.up)
                     input = face.down;
             }
 

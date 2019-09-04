@@ -25,3 +25,17 @@
 \\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.pdb
 \\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.GamePage.resources
 \\Mac\Home\Documents\GitHub\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.MainPage.resources
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\bin\Debug\WindowsFormsApp1.exe
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\obj\Debug\Snack.csprojAssemblyReference.cache
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.ChooseSize.resources
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.MainPage.resources
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.GamePage.resources
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.Records.resources
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.startPage.resources
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\obj\Debug\Snack.csproj.GenerateResource.cache
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\obj\Debug\Snack.csproj.CoreCompileInputs.cache
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.exe
+C:\Users\朋朋\Documents\GitHub\Chopinic\gluttonous-snake\Snack\obj\Debug\WindowsFormsApp1.pdb
