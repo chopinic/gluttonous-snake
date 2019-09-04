@@ -7,23 +7,23 @@ namespace WindowsFormsApp1
     {
         protected bool isAlive = true;
         protected static face dirc = face.up;
-        protected static ArrayList footPrint = new ArrayList();
+        protected static ArrayList body = new ArrayList();
         protected int length = 1;
         protected int nowSite = 0;
-        public Snack() { footPrint.Clear(); Position now = new Position(55);footPrint.Add(now);  dirc = face.up; }
+        public Snack() { body.Clear(); Position now = new Position(55);body.Add(now);  dirc = face.up; }
         public static face getdirc() { return dirc; }
         public static void  setdirc(face a) { dirc = a; }
         public int getLength() { return length; }
         virtual public bool Walk()
         {
-            Position now = new Position(footPrint[length - 1] as Position);
+            Position now = new Position(body[length - 1] as Position);
             Position t = new Position();
             if (now.next(dirc))
             {
                 if (now.mapValue() == 3)
                 {
                     length++;
-                    footPrint.Add(now);
+                    body.Add(now);
                     GamePage.map[now.x, now.y] = 2;
                     GamePage.newFood();
 
@@ -34,11 +34,11 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    footPrint.Add(now);
+                    body.Add(now);
                     GamePage.map[now.x, now.y] = 2;
-                    t = (Position)footPrint[0];
+                    t = (Position)body[0];
                     GamePage.map[t.x, t.y] = 1;
-                    footPrint.RemoveAt(0);
+                    body.RemoveAt(0);
                 }
             }
             else
